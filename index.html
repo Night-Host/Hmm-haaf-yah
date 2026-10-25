@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Pik</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 15px;
+    background: #090909;
+    color: #eee;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: white;
+    animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: .15; }
+    to { opacity: .8; }
+}
+
+.card {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 440px;
+    padding: 40px 28px;
+    text-align: center;
+    background: rgba(255,255,255,.025);
+    border: 1px solid #303030;
+    border-radius: 5px;
+    box-shadow: 0 20px 70px rgba(0,0,0,.5);
+    animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.label {
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #999;
+}
+
+h1 {
+    margin: 22px 0 10px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 55px;
+    font-weight: 400;
+}
+
+.subtitle {
+    color: #999;
+    font-size: 12px;
+}
+
+.line {
+    width: 45px;
+    height: 1px;
+    margin: 28px auto;
+    background: #888;
+}
+
+.message {
+    color: #ccc;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 2.1;
+    white-space: pre-line;
+}
+
+.signature {
+    margin: 25px 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-style: italic;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 8px;
+    border: 1px solid #666;
+    background: transparent;
+    color: #eee;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    background: #eee;
+    color: #111;
+}
+
+.response {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #333;
+    color: #bbb;
+    font-size: 12px;
+    line-height: 2;
+    white-space: pre-line;
+    animation: fadeIn .6s ease;
+}
+
+.footer {
+    margin-top: 30px;
+    color: #555;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+@media (max-width: 380px) {
+    .card { padding: 32px 20px; }
+    h1 { font-size: 46px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background" id="background"></div>
+
+<main class="card">
+
+    <p class="label">A message for you</p>
+
+    <h1>I'm Sorry,<br>Syafiqah heryanda putri kalo ga salah.</h1>
+
+    <p class="subtitle">Bacaaaaa!!</p>
+
+    <div class="line"></div>
+
+    <div class="message" id="message"></div>
+
+    <p class="signature">From me, sincerely.</p>
+
+    <button onclick="toggleMessage()">
+        Ada yang mau aku sampein lagi
+    </button>
+
+    <div class="response" id="response">Pik, aku nggak berharap kamu langsung
+maafin aku setelah baca ini.
+
+Aku cuma pengen kita bisa ngobrol lagi
+kayak biasanya, aku juga kepikiran terus anjink ggra lu,gw sampe ga tidur bangke.
+
+Kalau kamu masih butuh waktu, nggak apa-apa.
+Aku ngerti.
+
+Sekali lagi, maaf ya, Pik.</div>
+
+    <p class="footer">A SINCERE APOLOGY</p>
+
+</main>
+
+<script>
+const text = `Pik, aku mau minta maaf ya.
+
+Aku sadar selama ini aku sering nyindir kamu,
+dan aku juga malah nggak ngajak kamu ngomong.
+
+Jujur, aku sadar sikapku itu nggak enak
+buat kamu. Apalagi kalau kamu jadi ngerasa
+aku sengaja ngejauhin kamu.
+
+Aku nggak seharusnya bersikap kayak gitu.
+Kalau ada masalah, harusnya aku ngomong baik-baik,
+bukan malah nyindir kamu atau diem aja.
+
+Maaf ya, Pik, kalau sikapku bikin kamu kecewa
+atau ngerasa nggak dihargai.
+
+Aku nggak mau nyari alasan buat kesalahanku.
+Aku cuma mau ngaku kalau aku memang salah.
+
+Aku juga nggak berharap kamu langsung
+maafin aku atau semuanya langsung biasa lagi.
+
+Aku cuma pengen minta maaf dengan jujur.
+Kalau nanti kamu udah mau ngobrol sama aku lagi,
+aku bakal seneng banget.
+
+Maaf ya, Pik.`;
+
+let index = 0;
+
+function typeText() {
+    const message = document.getElementById("message");
+
+    if (index < text.length) {
+        message.textContent += text.charAt(index);
+        index++;
+
+        setTimeout(
+            typeText,
+            text.charAt(index - 1) === "\n" ? 180 : 35
+        );
+    }
+}
+
+function toggleMessage() {
+    const response = document.getElementById("response");
+
+    response.style.display =
+        response.style.display === "block" ? "none" : "block";
+
+    if (response.style.display === "block") {
+        response.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+        });
+    }
+}
+
+function createStars() {
+    const background = document.getElementById("background");
+
+    for (let i = 0; i < 80; i++) {
+        const star = document.createElement("span");
+        star.className = "star";
+        star.style.left = Math.random() * 100 + "%";
+        star.style.top = Math.random() * 100 + "%";
+        star.style.animationDelay = Math.random() * 3 + "s";
+        background.appendChild(star);
+    }
+}
+
+createStars();
+
+window.addEventListener("load", () => {
+    setTimeout(typeText, 700);
+});
+</script>
+
+</body>
+</html>
